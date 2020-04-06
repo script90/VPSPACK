@@ -13,9 +13,8 @@ except:
 PASS = ''
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-MSG = 'VPSPACK'
 DEFAULT_HOST = '0.0.0.0:22'
-RESPONSE = 'HTTP/1.1 200 Connection established\r\n\r\n'
+RESPONSE = 'HTTP/1.1 200 VPSPACK\r\n\r\n'
  
 class Server(threading.Thread):
     def __init__(self, host, port):
