@@ -8,4 +8,4 @@ apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 # Instalar script:
 
-wget https://raw.githubusercontent.com/twossh/vpspack/master/install && bash install
+wget https://raw.githubusercontent.com/script90/VPSPACK/master/install && bash install
