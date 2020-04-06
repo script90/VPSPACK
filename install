@@ -98,31 +98,31 @@ mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
 rm -rf /bin/limite 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/limite > /bin/limite
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/limite > /bin/limite
 chmod +x /bin/limite
 rm -rf /bin/criarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/criarusuario > /bin/criarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
 rm -rf /bin/deletarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/deletarusuario > /bin/deletarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/deletarusuario > /bin/deletarusuario
 chmod +x /bin/deletarusuario
 rm -rf /bin/redefinirusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/redefinirusuario > /bin/redefinirusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/menu 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/menu > /bin/menu
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/menu > /bin/menu
 chmod +x /bin/menu
 rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/speedtest.py > /bin/speedtest.py
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
 rm -rf /bin/proxy.py 2>/dev/null
-wget https://raw.githubusercontent.com/twossh/vpspack/master/proxy.py -O /bin/proxy.py > /dev/null 2>&1
+wget https://raw.githubusercontent.com/script90/VPSPACK/master/proxy.py -O /bin/proxy.py > /dev/null 2>&1
 chmod +x /bin/proxy.py
 rm -rf /bin/badvpn-udpgw 2>/dev/null
-wget -O /bin/badvpn-udpgw https://github.com/twossh/vpspack/blob/master/badvpn-udpgw?raw=true -o /dev/null
+wget -O /bin/badvpn-udpgw https://github.com/script90/VPSPACK/blob/master/badvpn-udpgw?raw=true -o /dev/null
 chmod +x /bin/badvpn-udpgw
 rm -rf /etc/autostart 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/twossh/vpspack/master/autostart > /etc/autostart
+wget -o /dev/null -O- https://raw.githubusercontent.com/script90/VPSPACK/master/autostart > /etc/autostart
 chmod +x /etc/autostart
 [[ $(crontab -l|grep -c "autostart") = '0' ]] && (crontab -l 2>/dev/null; echo -e "@reboot /etc/autostart\n* * * * * /etc/autostart") | crontab -
 service apache2 restart > /dev/null 2>&1
