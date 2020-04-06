@@ -1,4 +1,4 @@
-# VpsPack ( Com Socks )
+# VpsPack ( Socks )
 
 Script básico para configuração e gerenciamento de servidores linux
 
