@@ -33,7 +33,7 @@ class Master(threading.Thread):
         self.endereco = endereco
     def run(self):
         try:
-            self.cliente = wrap_socket(self.cliente,server_side=True,certfile='/etc/stunnel/cert.pem',keyfile='/etc/stunnel/key.pem')
+            self.cliente = wrap_socket(self.cliente,server_side=True,certfile='/usr/sbin/scktcerts/edussh.crt',keyfile='/usr/sbin/scktcerts/edussh.key')
             req = b''
             req = self.cliente.recv(PAY_BUFFER).replace(b'\r',b'')
         except:
