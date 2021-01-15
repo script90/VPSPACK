@@ -2,4 +2,4 @@
 clear
 #INICIO AUTOMATICO
 ps x | grep 'udpvpn' | grep -v 'grep' && echo 'ON' || badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10 > /dev/null &
-netstat -tlpn | grep python > /dev/null && echo 'ON' || screen -dmS proxy python /bin/proxy.py
+netstat -tlpn | grep -w 80 > /dev/null && echo 'ON' || screen -dmS proxy python /bin/proxy.py
