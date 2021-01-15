@@ -350,7 +350,7 @@ case $opcao in
   11)
    removerexpirados;;
   12)
-   speedtest.py;;
+   speedtest-cli;;
   13)
    sistemadetalhes;;
   14)
