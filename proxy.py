@@ -14,7 +14,7 @@ PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60
 DEFAULT_HOST = '0.0.0.0:22'
-RESPONSE = "HTTP/1.1 200 VPSPACK\r\n\r\n'
+RESPONSE = "HTTP/1.1 200 VPSPACK\r\n\r\n"
  
 class Server(threading.Thread):
     def __init__(self, host, port):
