@@ -24,7 +24,6 @@ class Server(threading.Thread):
         self.port = port
         self.threads = []
 	self.threadsLock = threading.Lock()
-	self.logLock = threading.Lock()
 
     def run(self):
         self.soc = socket.socket(socket.AF_INET)
@@ -48,11 +47,7 @@ class Server(threading.Thread):
         finally:
             self.running = False
             self.soc.close()
-            
-    def printLog(self, log):
-        self.logLock.acquire()
-        print log
-        self.logLock.release()
+           
 	
     def addConn(self, conn):
         try:
@@ -89,7 +84,6 @@ class ConnectionHandler(threading.Thread):
         self.client = socClient
         self.client_buffer = ''
         self.server = server
-        self.log = 'Conexao: ' + str(addr)
 
     def close(self):
         try:
@@ -140,8 +134,6 @@ class ConnectionHandler(threading.Thread):
                 self.client.send('HTTP/1.1 400 NoXRealHost!\r\n\r\n')
 
         except Exception as e:
-            self.log += ' - error: ' + e.strerror
-            self.server.printLog(self.log)
 	    pass
         finally:
             self.close()
@@ -180,11 +172,9 @@ class ConnectionHandler(threading.Thread):
         self.target.connect(address)
 
     def method_CONNECT(self, path):
-    	self.log += ' - CONNECT ' + path
         self.connect_target(path)
         self.client.sendall(RESPONSE)
         self.client_buffer = ''
-        self.server.printLog(self.log)
         self.doCONNECT()
                     
     def doCONNECT(self):
@@ -226,7 +216,7 @@ def main(host=IP, port=PORT):
     print "\033[0;34m━"*8,"\033[1;32m PROXY SOCKS","\033[0;34m━"*8,"\n"
     print "\033[1;33mIP:\033[1;32m " + IP
     print "\033[1;33mPORTA:\033[1;32m " + str(PORT) + "\n"
-    print "\033[0;34m━"*10,"\033[1;32m VPSPACK","\033[0;34m━\033[1;37m"*11,"\n"
+    print "\033[0;34m━"*10,"\033[1;32m SSHPLUS","\033[0;34m━\033[1;37m"*11,"\n"
     server = Server(IP, PORT)
     server.start()
     while True:
